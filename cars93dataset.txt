@@ -1,0 +1,104 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.cm as cm
+cars_df=pd.read_csv("C:/Users/CSE WPT/Downloads/archive/Cars93.csv")
+columns=["Manufacturer","Model","Type","Price","MPG.city","MPG.highway","Horsepower","Rear.seat.room","Passengers"]
+cars_df[columns].head()
+
+fig,ax=plt.subplots(2,3)
+fig.set_figwidth(10)
+fig.set_figheight(7)
+fig.suptitle("range of diffent cars",fontsize=16)
+
+ax[0][0].boxplot(cars_df["Price"][cars_df["Type"]=="Compact"])
+ax[0][0].set_title('Compact')
+ax[0][1].boxplot(cars_df["Price"][cars_df["Type"]=="Large"])
+ax[0][1].set_title('Large')
+ax[0][2].boxplot(cars_df["Price"][cars_df["Type"]=="Small"])
+ax[0][2].set_title('Small')
+ax[1][0].boxplot(cars_df["Price"][cars_df["Type"]=="Midsize"])
+ax[1][0].set_title('Midsize')
+ax[1][1].boxplot(cars_df["Price"][cars_df["Type"]=="Sporty"])
+ax[1][1].set_title('Sporty')
+ax[1][2].boxplot(cars_df["Price"][cars_df["Type"]=="Van"])
+ax[1][2].set_title('Van')
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df=pd.read_csv("C:/Users/CSE WPT/Downloads/archive/Cars93.csv")
+print(df.head(5))
+print(np.max(df.Price))
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df=pd.read_csv("C:/Users/CSE WPT/Downloads/archive/Cars93.csv")
+print(df.head(5))
+mode1=df['MPG.city'].mode()
+print("h f",mode1)
+fig=plt.figure()
+plt.title("f")
+plt.xlabel("MPG.city")
+plt.hist(df["MPG.city"],bins=5,edgecolor="black")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df=pd.read_csv("C:/Users/CSE WPT/Downloads/archive/Cars93.csv")
+print(df.head(5))
+
+ax=df.plot(["Horsepower"],["MPG.city"],kind="scatter",color="red",marker="*",figsize=(10,7))
+ax.set_xlabel("Horsepower")
+ax.set_ylabel("MPG.city")
+ax.set_title("h vs m",fontsize=16)
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df=pd.read_csv("C:/Users/CSE WPT/Downloads/archive/Cars93.csv")
+print(df.head(5))
+
+plt.plot(df["Horsepower"],df["EngineSize"])
+plt.xlabel('Horsepower')
+plt.ylabel('EngineSize')
+
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df=pd.read_csv("C:/Users/CSE WPT/Downloads/archive/Cars93.csv")
+print(df.head(5))
+fig=plt.figure()
+plt.title("Scatter")
+plt.scatter(df['Horsepower'],df['MPG.city'])
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df=pd.read_csv("C:/Users/CSE WPT/Downloads/archive/Cars93.csv")
+print(df.head(5))
+fig=plt.figure()
+plt.title("variation bw Enginesize and Horsepower")
+plt.plot(df['EngineSize'],df['Horsepower'])
+
+
+import pandas as pd
+import numpy as np
+x=pd.Series([10,20,30,40,50])
+y=pd.Series([10,20,30,40,50])
+intersect=pd.Series(np.intersect1d(x,y))
+print(intersect)
+Large=pd.Series(np.max(x))
+print(Large)
+small=pd.Series(np.max(x))
+print(small)
+sum=pd.Series(np.sum(y))
+print(sum)
+
+
